@@ -10,12 +10,18 @@ class BookResource extends JsonResource
     /**
      * =========1=========
      * Transformasikan resource menjadi array.
+     * @return array<string, mixed>
      * Pastikan untuk menyertakan semua atribut model Book.
      */
+    
     public function toArray(Request $request): array
     {
         return [
-
+            'id' =>$this->id,
+            'title' =>$this->title,
+            'author' =>$this->author,
+            'published_year' =>$this->published_year,
+            'is_available' =>$this->is_available,
         ];
     }
 }
